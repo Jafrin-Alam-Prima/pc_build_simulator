@@ -1,0 +1,80 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<!-- component -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+<div class="bg-gradient-to-br from-indigo-900 to-green-900 min-h-screen overflow-auto">
+  <div class="container max-w-5xl mx-auto px-4">
+    <div class="w-4/5">
+      <h1 class="mt-32 text-white text-6xl font-bold">Welcome to the Ultimate <br /><span class="text-blue-400"> PC Build Simulator!</span></h1>
+    </div>
+    <div class="w-5/6 my-10 ml-6">
+      <h3 class="text-gray-300">
+        Build Your Dream Rig Virtually <br />
+        <strong class="text-white">Simply share your budget with us, and we'll handle the rest!</strong>
+        <br />No need to worry about compatibility issues or breaking the bank.
+      </h3>
+    </div>
+    <div class="hidden sm:block opacity-50 z-0">
+      <div class="shadow-2xl w-96 h-96 rounded-full -mt-72"></div>
+      <div class="shadow-2xl w-96 h-96 rounded-full -mt-96"></div>
+      <div class="shadow-xl w-80 h-80 rounded-full ml-8 -mt-96"></div>
+    </div>
+    <div class="text-white relative">
+      <h3 class="text-uppercase font-semibold">Navigate to our options</h3>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 sm:gap-5 uppercase">
+        <div onclick="window.location='build'" class="group flex items-center bg-indigo-900 bg-opacity-40 shadow-xl gap-5 px-6 py-5 rounded-lg ring-2 ring-offset-2 ring-offset-blue-800 ring-cyan-700 mt-5 cursor-pointer hover:bg-blue-900 hover:bg-opacity-100 transition">
+          <img class="w-9" src="/images/pc3.png" alt="" />
+          <div>
+            <span>Build</span>
+            <span class="text-xs text-blue-300 block">Simulator</span>
+          </div>
+          <div>
+            <i class="fa fa-chevron-right opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 block transition"></i>
+          </div>
+        </div>
+
+        <div onclick="window.location='expert'" class="group flex items-center bg-indigo-900 bg-opacity-40 shadow-xl gap-5 px-6 py-5 rounded-lg ring-2 ring-offset-2 ring-offset-blue-800 ring-cyan-700 mt-5 cursor-pointer hover:bg-blue-900 hover:bg-opacity-100 transition">
+          <img class="w-9" src="/images/expert.png" alt="" />
+          <div>
+            <span>Expert</span>
+            <span class="text-xs text-blue-300 block">Consultation</span>
+          </div>
+          <div>
+            <i class="fa fa-chevron-right opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 block transition"></i>
+          </div>
+        </div>
+
+        <div onclick="window.location='login'" class="group flex items-center bg-indigo-900 bg-opacity-40 shadow-xl gap-5 px-6 py-5 rounded-lg ring-2 ring-offset-2 ring-offset-blue-800 ring-cyan-700 mt-5 cursor-pointer hover:bg-blue-900 hover:bg-opacity-100 transition">
+          <img class="w-9" src="/images/lock.png" alt="" />
+          <div>
+            <span>Login</span>
+            <span class="text-xs text-blue-300 block">Registration</span>
+          </div>
+          <div>
+            <i class="fa fa-chevron-right opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 block transition"></i>
+          </div>
+        </div>
+
+        <div onclick="window.location='community'" class="group flex items-center bg-indigo-900 bg-opacity-40 shadow-xl gap-5 px-6 py-5 rounded-lg ring-2 ring-offset-2 ring-offset-blue-800 ring-cyan-700 mt-5 cursor-pointer hover:bg-blue-900 hover:bg-opacity-100 transition">
+          <img class="w-9" src="/images/community.png" alt="" />
+          <div>
+            <span>Community</span>
+            <span class="text-xs text-blue-300 block">Stay updated</span>
+          </div>
+          <div>
+            <i class="fa fa-chevron-right opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 block transition"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

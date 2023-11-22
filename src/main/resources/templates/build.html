@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+	<nav th:replace="includes/sidebar :: sidebar" />
+
+    <!-- comp start -->
+    <!-- component -->
+<div class="flex items-center justify-center min-h-screen bg-gray-200">
+  <div class="row">
+    <div class="col">
+		<form th:action="@{/updateAttributes}" method="POST">
+    <div class="flex w-[20rem] rounded bg-white" x-data="{ search: '' }">
+        <input
+            type="number"
+            name="budget"
+            class="w-full border-none bg-transparent px-4 py-1 text-gray-900 focus:outline-none"
+            placeholder="Enter your budget"
+            x-model="search"
+            min="0"
+            oninput="validity.valid||(value='');"
+            style="-moz-appearance: textfield; /* Hide arrow controls on Firefox */"
+        />
+        <button type="submit" class="m-2 rounded px-4 py-2 font-semibold text-gray-100"
+            :class="(search) ? 'bg-purple-500' : 'bg-gray-500 cursor-not-allowed'"
+            :disabled="!search">Build
+        </button>
+    </div>
+</form>
+
+    </div>
+    <div th:if="${monitorBrand != null}" class="col mt-9">
+      <div aria-label="card" class="p-8 rounded-3xl bg-white max-w-sm w-full">
+        <div aria-label="header" class="flex items-center space-x-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 shrink-0"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11"></path>
+          </svg>
+          <div class="space-y-0.5 flex-1">
+            <h3
+              class="font-medium text-lg tracking-tight text-gray-900 leading-tight"
+            >
+              AI Powered Simulation
+            </h3>
+            <p class="text-sm font-normal text-gray-400 leading-none">
+              For dream build
+            </p>
+          </div>
+          <a
+            href="/build"
+            class="inline-flex items-center shrink-0 justify-center w-8 h-8 rounded-full text-white bg-gray-900 focus:outline-none"
+          >
+			<i class="fa fa-refresh" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div aria-label="content" class="mt-9 grid gap-2.5">
+          <a href="#">
+              <div
+                class="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100"
+              >
+                <span
+                  class="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900"
+                >
+                <i class="fa fa-desktop" aria-hidden="true"></i>
+                </span>
+                <div class="flex flex-col flex-1">
+                  <h3 class="text-sm font-medium">Monitor</h3>
+                  <div class="divide-x divide-gray-200 mt-auto">
+                    <span
+                    th:text="'Brand: ' + ${monitorBrand}"
+                      class="inline-block px-3 text-xs leading-none text-gray-400 font-normal first:pl-0"
+                      ></span
+                    >
+
+                  </div>
+                </div>
+    
+              </div>
+            </a>
+          <a href="#">
+              <div
+                class="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100"
+              >
+                <span
+                  class="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900"
+                >
+                <i class="fa fa-microchip" aria-hidden="true"></i>
+                </span>
+                <div class="flex flex-col flex-1">
+                  <h3 class="text-sm font-medium">Processor</h3>
+                  <div class="divide-x divide-gray-200 mt-auto">
+                    <span
+                    th:text="'Brand: ' + ${processorBrand}"
+                      class="inline-block px-3 text-xs leading-none text-gray-400 font-normal first:pl-0"
+                      ></span
+                    >
+
+                  </div>
+                </div>
+    
+              </div>
+            </a>
+          <a href="#">
+            <div
+              class="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100"
+            >
+              <span
+                class="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900"
+              >
+              <i class="fa fa-square" aria-hidden="true"></i>
+              </span>
+              <div class="flex flex-col flex-1">
+                <h3 class="text-sm font-medium">Motherboard</h3>
+                <div class="divide-x divide-gray-200 mt-auto">
+                  <span
+                  th:text="'Brand: ' + ${motherboardBrand}"
+                    class="inline-block px-3 text-xs leading-none text-gray-400 font-normal first:pl-0"
+                    ></span
+                  >
+                </div>
+              </div>
+  
+            </div>
+          </a>
+          <a href="#">
+              <div
+                class="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100"
+              >
+                <span
+                  class="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900"
+                >
+                <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                </span>
+                <div class="flex flex-col flex-1">
+                  <h3 class="text-sm font-medium">Ram</h3>
+                  <div class="divide-x divide-gray-200 mt-auto">
+                    <span
+                    th:text="'Brand: ' + ${ramBrand}"
+                      class="inline-block px-3 text-xs leading-none text-gray-400 font-normal first:pl-0"
+                      ></span
+                    >
+
+                  </div>
+                </div>
+    
+              </div>
+            </a>
+            <a href="#">
+              <div
+                class="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100"
+              >
+                <span
+                  class="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900"
+                >
+                <i class="fa fa-server" aria-hidden="true"></i>
+                </span>
+                <div class="flex flex-col flex-1">
+                  <h3 class="text-sm font-medium">HDD</h3>
+                  <div class="divide-x divide-gray-200 mt-auto">
+                    <span
+                    th:text="'Brand: ' + ${hddBrand}"
+                      class="inline-block px-3 text-xs leading-none text-gray-400 font-normal first:pl-0"
+                      ></span
+                    >
+
+                  </div>
+                </div>
+    
+              </div>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    <!-- comp end -->
+</body>
+</html>
